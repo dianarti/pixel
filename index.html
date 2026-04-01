@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Disappointing Website</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #0d0d0d, #050510);
+      color: white;
+      font-family: 'Press Start 2P', monospace;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.4;
+      color: #3b5bff;
+      text-shadow: 2px 2px 0px white;
+      margin-bottom: 40px;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      background: #d4ff00;
+      color: black;
+      padding: 20px 40px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .glitch::before {
+      color: red;
+      transform: translate(2px, 0);
+      opacity: 0.6;
+    }
+
+    .glitch::after {
+      color: cyan;
+      transform: translate(-2px, 0);
+      opacity: 0.6;
+    }
+
+    .small {
+      font-size: 10px;
+      color: #777;
+      position: absolute;
+    }
+
+    .top-right { top: 20px; right: 20px; }
+    .bottom-left { bottom: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
+
+    .card {
+      background: #1a1a2e;
+      padding: 60px;
+      margin: 120px auto;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+    }
+
+    ul {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="small top-right">[error 418]</div>
+<div class="small bottom-left">[loading...]</div>
+<div class="small bottom-right">[undefined]</div>
+
+<div class="container">
+  <h1 class="glitch" data-text="THIS WEBSITE WILL PROBABLY DISAPPOINT YOU">
+    THIS WEBSITE WILL PROBABLY DISAPPOINT YOU
+  </h1>
+
+  <p>just like most products on the internet</p>
+
+  <a href="#next" class="btn">CONTINUE ANYWAY</a>
+</div>
+
+<div id="next" class="card">
+  <p>we build digital products. unfortunately, they tend to work.</p>
+
+  <ul>
+    <li>— fast</li>
+    <li>— slightly better</li>
+    <li>— good enough</li>
+  </ul>
+
+  <a href="#" class="btn">FINE. LET’S TALK.</a>
+</div>
+
+</body>
+</html>
