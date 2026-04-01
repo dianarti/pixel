@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Disappointing Website</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/pixeloid-sans" rel="stylesheet">
 
   <style>
@@ -25,7 +25,7 @@
 
     .container {
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px;
       position: relative;
     }
 
@@ -35,7 +35,7 @@
       line-height: 1.4;
       color: #3b5bff;
       text-shadow: 2px 2px 0px white;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
 
       opacity: 0;
       transform: translateY(20px);
@@ -49,9 +49,11 @@
       }
     }
 
+    /* ✨ увеличенный текст */
     p {
       color: #aaa;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
+      font-size: 18px;
 
       opacity: 0;
       animation: fadeIn 1s ease forwards;
@@ -62,14 +64,17 @@
       to { opacity: 1; }
     }
 
+    /* ✨ более жирная кнопка */
     .btn {
       background: #d4ff00;
       color: black;
-      padding: 20px 40px;
+      padding: 22px 44px;
       text-decoration: none;
       display: inline-block;
       margin: 20px 0;
       transition: transform 0.2s ease;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .btn:hover {
@@ -101,7 +106,7 @@
       opacity: 0.6;
     }
 
-    /* ✨ декоративные подписи (исправлено) */
+    /* ✨ декоративный текст */
     .small {
       font-size: 10px;
       color: #888;
@@ -109,34 +114,41 @@
       opacity: 0.6;
     }
 
-    .top-right {
-      top: 40px;
-      right: 60px;
-    }
+    .top-right { top: 40px; right: 60px; }
+    .bottom-left { bottom: 60px; left: 50px; }
+    .bottom-right { bottom: 80px; right: 70px; }
 
-    .bottom-left {
-      bottom: 60px;
-      left: 50px;
-    }
+    /* ✨ КРЕСТИКИ ПО СЕТКЕ */
 
-    .bottom-right {
-      bottom: 80px;
-      right: 70px;
-    }
-
-    /* ✨ крестики */
     .cross {
       position: absolute;
       color: #d4ff00;
       font-size: 18px;
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
-    .cross1 { top: 120px; left: 80px; }
-    .cross2 { bottom: 200px; right: 100px; }
-    .cross3 { top: 300px; right: 200px; }
+    /* первый блок */
+    .cross-top-center {
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
+    .cross-left-center {
+      top: 50%;
+      left: 40px;
+      transform: translateY(-50%);
+    }
+
+    .cross-right-center {
+      top: 50%;
+      right: 40px;
+      transform: translateY(-50%);
+    }
+
+    /* второй блок */
     .card {
+      position: relative;
       background: #1a1a2e;
       margin: 120px auto;
       width: 80%;
@@ -148,6 +160,24 @@
       transform: translateY(30px);
       animation: cardIn 1s ease forwards;
       animation-delay: 0.6s;
+    }
+
+    .cross-card-center {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cross-card-left {
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+    }
+
+    .cross-card-right {
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
     }
 
     @keyframes cardIn {
@@ -194,21 +224,28 @@
 <div class="small bottom-left">[loading...]</div>
 <div class="small bottom-right">[undefined]</div>
 
-<div class="cross cross1">+</div>
-<div class="cross cross2">+</div>
-<div class="cross cross3">+</div>
-
 <div class="container">
+
+  <!-- крестики 1 блока -->
+  <div class="cross cross-top-center">+</div>
+  <div class="cross cross-left-center">+</div>
+  <div class="cross cross-right-center">+</div>
+
   <h1 class="glitch" data-text="THIS WEBSITE WILL PROBABLY DISAPPOINT YOU">
     THIS WEBSITE WILL PROBABLY DISAPPOINT YOU
   </h1>
 
-  <p>just like most products on the internet</p>
+  <p>Just like most products on the internet</p>
 
   <a href="#next" class="btn">CONTINUE ANYWAY</a>
 </div>
 
 <div id="next" class="card">
+
+  <!-- крестики 2 блока -->
+  <div class="cross cross-card-center">+</div>
+  <div class="cross cross-card-left">+</div>
+  <div class="cross cross-card-right">+</div>
 
   <div class="window-bar">
     <div class="dot red"></div>
