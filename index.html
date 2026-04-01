@@ -75,10 +75,21 @@
       opacity: 0;
       animation: fadeIn 1s ease forwards;
       animation-delay: 0.5s;
+
+      animation: subtlePulse 3s ease-in-out infinite;
     }
 
     .btn:hover {
       transform: scale(1.05);
+    }
+
+    @keyframes subtlePulse {
+      0%, 100% {
+        box-shadow: 0 0 0 rgba(212, 255, 0, 0);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(212, 255, 0, 0.25);
+      }
     }
 
     .glitch {
@@ -128,6 +139,13 @@
       transform: translateY(30px);
       animation: cardIn 1s ease forwards;
       animation-delay: 0.6s;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(59, 91, 255, 0.25);
     }
 
     @keyframes cardIn {
@@ -137,7 +155,6 @@
       }
     }
 
-    /* ✨ ВАЖНО: настоящие буллеты */
     ul {
       text-align: left;
       margin-bottom: 40px;
