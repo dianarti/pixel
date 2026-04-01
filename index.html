@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <title>Disappointing Website</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/pixeloid-sans" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       background: radial-gradient(circle at center, #0d0d0d, #050510);
       color: white;
-      font-family: 'Press Start 2P', monospace;
+      font-family: 'B612 Mono', monospace;
       overflow-x: hidden;
 
       opacity: 0;
@@ -19,17 +20,17 @@
     }
 
     @keyframes pageFade {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .container {
       text-align: center;
       padding: 100px 20px;
+      position: relative;
     }
 
     h1 {
+      font-family: 'Pixeloid Sans', sans-serif;
       font-size: 42px;
       line-height: 1.4;
       color: #3b5bff;
@@ -58,9 +59,7 @@
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .btn {
@@ -71,8 +70,6 @@
       display: inline-block;
       margin: 20px 0;
       transition: transform 0.2s ease;
-
-      opacity: 1; /* важно: кнопка всегда видимая */
     }
 
     .btn:hover {
@@ -104,23 +101,81 @@
       opacity: 0.6;
     }
 
+    /* ✨ декоративные подписи (исправлено) */
     .small {
       font-size: 10px;
-      color: #777;
+      color: #888;
       position: absolute;
+      opacity: 0.6;
     }
 
-    .top-right { top: 20px; right: 20px; }
-    .bottom-left { bottom: 20px; left: 20px; }
-    .bottom-right { bottom: 20px; right: 20px; }
+    .top-right {
+      top: 40px;
+      right: 60px;
+    }
+
+    .bottom-left {
+      bottom: 60px;
+      left: 50px;
+    }
+
+    .bottom-right {
+      bottom: 80px;
+      right: 70px;
+    }
+
+    /* ✨ крестики */
+    .cross {
+      position: absolute;
+      color: #d4ff00;
+      font-size: 18px;
+      opacity: 0.6;
+    }
+
+    .cross1 { top: 120px; left: 80px; }
+    .cross2 { bottom: 200px; right: 100px; }
+    .cross3 { top: 300px; right: 200px; }
 
     .card {
       background: #1a1a2e;
-      padding: 60px;
       margin: 120px auto;
       width: 80%;
       max-width: 700px;
       border-radius: 10px;
+      overflow: hidden;
+
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardIn 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes cardIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .window-bar {
+      background: #111;
+      padding: 10px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .red { background: #ff5f56; }
+    .yellow { background: #ffbd2e; }
+    .green { background: #27c93f; }
+
+    .card-content {
+      padding: 40px;
     }
 
     ul {
@@ -139,6 +194,10 @@
 <div class="small bottom-left">[loading...]</div>
 <div class="small bottom-right">[undefined]</div>
 
+<div class="cross cross1">+</div>
+<div class="cross cross2">+</div>
+<div class="cross cross3">+</div>
+
 <div class="container">
   <h1 class="glitch" data-text="THIS WEBSITE WILL PROBABLY DISAPPOINT YOU">
     THIS WEBSITE WILL PROBABLY DISAPPOINT YOU
@@ -151,13 +210,21 @@
 
 <div id="next" class="card">
 
-  <ul>
-    <li>fast</li>
-    <li>slightly better</li>
-    <li>good enough</li>
-  </ul>
+  <div class="window-bar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+  </div>
 
-  <a href="#" class="btn">FINE. LET’S TALK.</a>
+  <div class="card-content">
+    <ul>
+      <li>fast</li>
+      <li>slightly better</li>
+      <li>good enough</li>
+    </ul>
+
+    <a href="#" class="btn">FINE. LET’S TALK.</a>
+  </div>
 
 </div>
 
